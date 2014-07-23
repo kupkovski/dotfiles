@@ -1,5 +1,0 @@
-BracketHighlighter
-ColorPicker
-OmniMarkupPreviewer
-SideBarEnhancements
-sublimetext_indentxml
