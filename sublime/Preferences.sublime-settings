@@ -1,7 +1,7 @@
 {
 	"auto_complete": false,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 	"draw_white_space": "selection",
 	"file_exclude_patterns":
 	[
@@ -25,7 +25,7 @@
 		"doc/css/style.css"
 	],
 	"font_face": "DejaVu Sans Mono",
-	"font_size": 22,
+	"font_size": 20,
 	"highlight_line": true,
 	"hot_exit": false,
 	"ignored_packages":
@@ -40,7 +40,7 @@
 	],
 	"run_rspec_command": "bundle exec rspec {relative_path}",
 	"tab_size": 2,
-	"theme": "Spacegray.sublime-theme",
+	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true
