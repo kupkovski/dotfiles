@@ -91,7 +91,18 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
     },
     config = function()
-      require("nvim-tree").setup {}
+      require("nvim-tree").setup {  
+        update_cwd = true,
+          update_focused_file = {
+            enable = true,
+            update_cwd = true,
+          },
+          actions = {
+            open_file = {
+              quit_on_open = true,
+            },
+          },
+        }
     end,
   }
 })
@@ -99,48 +110,26 @@ require("lazy").setup({
 ---------------------------------
 -- Custom Keybindings
 
--- Open Spectre
-vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
-    desc = "Toggle Spectre"
-})
-
 -- Toggle Nvim Tree
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
-
--- Find current file in tree with <Leader>+n
-vim.keymap.set("n", "<Leader>n", ":NvimTreeFindFile<CR>", { silent = true, remap = false })
-
--- Telescope shortcuts:
-local builtin = require('telescope.builtin')
---- Find files with <Leader>+ff
-vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
---- Live grep with <Leader>+fs
-vim.keymap.set('n', '<Leader>fs', builtin.live_grep, {})
---- " to open registers 
-vim.keymap.set('n', '"', builtin.registers, {})
-
--- wq to save and quit
-vim.keymap.set("n", "<leader>wq", "<cmd>:wq<CR>", { noremap = true, silent = true })
-
--- Open a vsplit with <Leader>v
-vim.keymap.set("n", "<Leader>v", ":vsp<CR>", { silent = true, remap = false })
-
 
 -----------------------------------------
 -- whichkey
 --
 local wk = require("which-key")
--- As an example, we will create the following mappings:
---  * <leader>ff find files
---  * <leader>fr show recent files
---  * <leader>fb Foobar
--- we'll document:
---  * <leader>fn new file
---  * <leader>fe edit file
--- and hide <leader>1
 
-wk.register({
+wk.register({ 
   f = {
     name = "file",
-  }
-}, { prefix = "<leader>" })
+    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    q = { "<cmd>:wq<cr>", "Save and Quit" },
+    d = { "<cmd>:Telescope live_grep search_dirs=%:p:h<CR>", "search in directory"},
+    r = { "<cmd>:NvimTreeFindFile<CR>", "Reveal in NvimTree" }
+  },
+  w = {
+    name = "window",
+    v = { "<cmd>:vsp<cr>", "split Vertical" },
+    h = { "<cmd>:split<cr>", "split Horizontal" }
+  },
+  prefix = "<leader>" 
+})
