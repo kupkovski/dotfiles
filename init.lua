@@ -62,6 +62,7 @@ vim.opt.foldlevel =  10
 --------------------------------------------------
 -- plugins
 require("lazy").setup({
+  { "tpope/vim-commentary" },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -102,6 +103,13 @@ require("lazy").setup({
               quit_on_open = true,
             },
           },
+          filters = {
+            dotfiles = true,
+            git_ignored = false
+          },
+          git = {
+            enable = true
+          }
         }
     end,
   }
