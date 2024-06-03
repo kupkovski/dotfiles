@@ -104,7 +104,7 @@ require("lazy").setup({
             },
           },
           filters = {
-            dotfiles = true,
+            dotfiles = false,
             git_ignored = false
           },
           git = {
@@ -125,11 +125,12 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, si
 -- whichkey
 --
 local wk = require("which-key")
+local default_telescope_opts = {noremap = true}
 
 wk.register({ 
   f = {
     name = "file",
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    f = { "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-u' }})<cr>", "Find File" },
     q = { "<cmd>:wq<cr>", "Save and Quit" },
     d = { "<cmd>:Telescope live_grep search_dirs=%:p:h<CR>", "search in directory"},
     r = { "<cmd>:NvimTreeFindFile<CR>", "Reveal in NvimTree" }
