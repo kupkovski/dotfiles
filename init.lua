@@ -70,3 +70,7 @@ require("lazy").setup("plugins")
 -- -- Toggle Nvim Tree
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
+
+-- Theme
+vim.o.background = 'dark'
+vim.cmd.colorscheme "catppuccin"
