@@ -72,8 +72,8 @@ vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, si
 
 
 -- Theme
-vim.o.background = 'dark'
 -- vim.cmd.colorscheme "catppuccin"
--- vim.cmd.colorscheme "dracula"
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "dracula"
+-- vim.cmd [[colorscheme tokyonight]]
+
 
