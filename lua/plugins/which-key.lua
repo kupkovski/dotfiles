@@ -10,7 +10,8 @@ return {
         f = { "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-u' }})<cr>", "Find File" },
         q = { "<cmd>:wq<cr>", "Save and Quit" },
         d = { "<cmd>:Telescope live_grep search_dirs=%:p:h<CR>", "search in directory"},
-        r = { "<cmd>:NvimTreeFindFile<CR>", "Reveal in NvimTree" }
+        r = { "<cmd>:NvimTreeFindFile<CR>", "Reveal in NvimTree" },
+        l = { "<cmd>:Telescope dir live_grep<CR>", "dir live_grep"}
       },
       w = {
         name = "window",
