@@ -1,0 +1,143 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+#
+toggle_key: TAB
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  - trigger: ":rcp"
+    replace: "{{project}}"
+    vars:
+      - name: project
+        type: shell
+        params:
+          cmd: "echo 'cd ~/pipeline/current/ && bin/rails c -e production'"
+          debug: true
+
+  - trigger: ":rci"
+    replace: "{{project}}"
+    vars:
+      - name: project
+        type: shell
+        params:
+          cmd: "echo 'cd ~/inform/current/ && bin/rails c'"
+          debug: true
+
+  - trigger: ":rco"
+    replace: "{{project}}"
+    vars:
+      - name: project
+        type: shell
+        params:
+          cmd: "echo 'cd ~/$|$/current/ && bin/rails c'"
+          debug: true
+
+  - trigger: ":spro"
+    replace: "{{theme}}"
+    vars:
+      - name: theme
+        type: shell
+        params:
+          cmd: "echo 'cd ~/inform/current && bundle exec rake sprockets:compile:$|$'"
+          debug: true
+
+  - trigger: ":ex"
+    replace: "{{quit}}"
+    vars:
+      - name: quit
+        type: shell
+        params:
+          cmd: "echo 'exit'"
+          debug: true
+
+
+  - trigger: ":inv"
+    replace: "{{slug}}"
+    vars:
+      - name: slug
+        type: shell
+        params:
+          cmd: "echo 'Site.find_by(slug: \"$|$\").invalidate_cache'"
+          debug: true
+
+ 
+  - trigger: ":fbs"
+    replace: "{{slug}}"
+    vars:
+      - name: slug
+        type: shell
+        params:
+          cmd: "echo 'Site.find_by(slug: \"$|$\")'"
+          debug: true
+
+  - trigger: ":ems"
+    replace: "{{ems}}"
+    vars: 
+      - name: ems
+        type: shell
+        params:
+          cmd: "echo 'emacs --daemon'"
+          debug: true
+
+  - trigger: ":emc"
+    replace: "{{emc}}"
+    vars: 
+      - name: emc
+        type: shell
+        params:
+          cmd: "echo 'emacsclient -t .'"
+          debug: true
+
+
+  - trigger: ":mergem"
+    replace: "{{mergem}}"
+    vars: 
+      - name: mergem
+        type: shell
+        params:
+          cmd: "echo 'git checkout master && git pull -p && git checkout - && git merge master'"
+          debug: true
+
+  - trigger: ":mergeb"
+    replace: "git checkout {{form1.name}} && git pull -p && git checkout - && git merge {{form1.name}}"
+    vars:
+      - name: "form1"
+        type: form
+        params:
+          layout: "origin: [[name]]"
+          fields:
+            name:
+              multiline: false
+
+# And much more! For more information, visit the docs: https://espanso.org/docs/
