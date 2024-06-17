@@ -3,3 +3,6 @@ font:
   normal:
     family: JetBrains Mono NL
     style: regular
+window:
+  startup_mode: Maximized
+  decorations: none
