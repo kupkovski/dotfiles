@@ -70,6 +70,11 @@ require("lazy").setup("plugins")
 -- -- Toggle Nvim Tree
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
+-- -- Toggle buffer_menu
+local opts = {noremap = true}
+local map = vim.keymap.set
+local bmui = require("buffer_manager.ui")
+map({ 't', 'n' }, '<leader>m', bmui.toggle_quick_menu, opts)
 
 -- Theme
 -- vim.cmd.colorscheme "catppuccin"
