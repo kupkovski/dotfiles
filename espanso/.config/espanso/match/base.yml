@@ -18,15 +18,6 @@ matches:
 
   # But matches can also be dynamic:
 
-  # Print the current date
-  - trigger: ":date"
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%m/%d/%Y"
-
   # Print the output of a shell command
   - trigger: ":shell"
     replace: "{{output}}"
@@ -91,7 +82,7 @@ matches:
           cmd: "echo 'Site.find_by(slug: \"$|$\").invalidate_cache'"
           debug: true
 
- 
+
   - trigger: ":fbs"
     replace: "{{slug}}"
     vars:
@@ -103,7 +94,7 @@ matches:
 
   - trigger: ":ems"
     replace: "{{ems}}"
-    vars: 
+    vars:
       - name: ems
         type: shell
         params:
@@ -112,7 +103,7 @@ matches:
 
   - trigger: ":emc"
     replace: "{{emc}}"
-    vars: 
+    vars:
       - name: emc
         type: shell
         params:
@@ -122,7 +113,7 @@ matches:
 
   - trigger: ":mergem"
     replace: "{{mergem}}"
-    vars: 
+    vars:
       - name: mergem
         type: shell
         params:
