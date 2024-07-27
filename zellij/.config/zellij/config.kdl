@@ -18,8 +18,17 @@ keybinds {
         bind "Alt Left" "Alt [" { GoToPreviousTab; } // Alt + left or [
         bind "Alt Right" "Alt ]" { GoToNextTab; } // Alt + right or ]
         bind "Alt z" { ToggleFocusFullscreen; } // Alt + z
+        bind "Alt !" { GoToTab 1; }
+        bind "Alt @" { GoToTab 2; }
+        bind "Alt #" { GoToTab 3; }
+        bind "Alt $" { GoToTab 4; }
+        bind "Alt %" { GoToTab 5; }
+        bind "Alt ^" { GoToTab 6; }
+        bind "Alt &" { GoToTab 7; }
+        bind "Alt *" { GoToTab 8; }
+        bind "Alt (" { GoToTab 9; }
+        bind "Alt )" { GoToTab 10; }
     }
-
 }
 
 themes {
