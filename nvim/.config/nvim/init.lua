@@ -77,8 +77,10 @@ local bmui = require("buffer_manager.ui")
 map({ 't', 'n' }, '<leader>m', bmui.toggle_quick_menu, opts)
 
 -- Theme
--- vim.cmd.colorscheme "catppuccin"
-vim.cmd.colorscheme "dracula"
+-- vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "catppuccin-macchiato"
+-- vim.cmd.colorscheme "dracula"
 -- vim.cmd [[colorscheme tokyonight]]
 
 

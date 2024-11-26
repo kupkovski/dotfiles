@@ -11,7 +11,8 @@ return {
         q = { "<cmd>:wq<cr>", "Save and Quit" },
         d = { "<cmd>:Telescope live_grep search_dirs=%:p:h<CR>", "search in directory"},
         r = { "<cmd>:NvimTreeFindFile<CR>", "Reveal in NvimTree" },
-        l = { "<cmd>:Telescope dir live_grep<CR>", "dir live_grep"}
+        l = { "<cmd>:Telescope dir live_grep<CR>", "dir live_grep"},
+        b = { "<cmd>:Telescope buffers<CR>", "buffers"}
       },
       w = {
         name = "window",
