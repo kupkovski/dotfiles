@@ -42,7 +42,7 @@ matches:
       - name: project
         type: shell
         params:
-          cmd: "echo 'cd ~/inform/current/ && bin/rails c'"
+          cmd: "echo 'cd ~/inform/current/ && bin/rails c -e production'"
           debug: true
 
   - trigger: ":rco"
