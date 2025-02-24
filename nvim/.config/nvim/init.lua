@@ -84,3 +84,4 @@ vim.cmd.colorscheme "catppuccin-macchiato"
 -- vim.cmd [[colorscheme tokyonight]]
 
 
+vim.cmd("let test#ruby#rspec#executable = 'docker-compose exec app bundle exec rspec'")
