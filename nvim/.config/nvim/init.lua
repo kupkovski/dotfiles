@@ -58,7 +58,6 @@ vim.opt.cursorline = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel =  10
 
-
 --------------------------------------------------
 -- plugins
 
@@ -79,8 +78,10 @@ map({ 't', 'n' }, '<leader>m', bmui.toggle_quick_menu, opts)
 -- Theme
 -- vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "catppuccin-frappe"
-vim.cmd.colorscheme "catppuccin-macchiato"
+-- vim.cmd.colorscheme "catppuccin-macchiato"
+-- vim.cmd.colorscheme "catppuccin-mocha"
 -- vim.cmd.colorscheme "dracula"
+vim.cmd.colorscheme "ayu"
 -- vim.cmd [[colorscheme tokyonight]]
 
 
