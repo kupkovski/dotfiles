@@ -131,4 +131,12 @@ matches:
             name:
               multiline: false
 
+  - trigger: ":rebasem"
+    replace: "{{rebasem}}"
+    vars:
+      - name: rebasem
+        type: shell
+        params:
+          cmd: "echo 'git checkout master && git pull -p && git checkout - && git rebase master'"
+          debug: true
 # And much more! For more information, visit the docs: https://espanso.org/docs/
